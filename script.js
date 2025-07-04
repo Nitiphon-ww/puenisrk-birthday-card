@@ -11,7 +11,7 @@ envelope.addEventListener('mouseover', () => {
     kuromi.style.opacity = 0;
     footerTimeoutId = setTimeout(() => {
         footer.style.opacity = 1;
-    }, 1600);
+    }, 2000);
     
 });
 
