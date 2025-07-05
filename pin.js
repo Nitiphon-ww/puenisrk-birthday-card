@@ -5,15 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     keys.forEach((key) => {
         key.addEventListener("click", (e) => {
-            // console.log(e.target);
             if (e.target.closest(".clear")) {
                 removeDot();
                 input.value = input.value.slice(0, -1);
             } else if (e.target.closest(".next")) {
                 if (input.value != "070743") {
                     setTimeout(() => {
-                        clearDot();
                         incorrect();
+                        clearDot();
                     }, 1000);
                 }
             } else if (input.value.length < 6) {
@@ -27,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 1300);
                 } else if (input.value.length == 6) {
                     setTimeout(() => {
-                        clearDot();
                         incorrect();
+                        clearDot();
                     }, 1000);
                 }
             }
@@ -68,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function clearDot() {
         const dots = dotsContainer.querySelectorAll(".dot");
-        const logo = document.querySelector('.logo');
         dots.forEach((dot) => {
             dot.classList.add("removing");
         });
@@ -82,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showWarning(message) {
         const warning = document.querySelector('.warning');
+        const logo = document.querySelector('.logo');
         warning.textContent = message;
         warning.style.display = 'block';
 
@@ -97,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             warning.textContent = '';
             warning.style.display = 'none';
+            logo.style.backgroundImage = "url('assets/7.png')";
         }, 2000);
     }
 
