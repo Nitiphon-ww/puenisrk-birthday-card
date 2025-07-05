@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (input.value != "070743") {
                     setTimeout(() => {
                         clearDot();
+                        incorrect();
                     }, 1000);
                 }
             } else if (input.value.length < 6) {
@@ -21,11 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (input.value === "070743" && input.value.length == 6) {
                     correct();
                     setTimeout(() => {
+                        clearDot();
                         window.location.href = "./puenisrk-card.html";
                     }, 1300);
                 } else if (input.value.length == 6) {
                     setTimeout(() => {
                         clearDot();
+                        incorrect();
                     }, 1000);
                 }
             }
@@ -75,8 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
         input.value = '';
-        logo.style.backgroundImage = "url('assets/9.png')";
-        showWarning("Incorrect PIN!");
     }
 
     function showWarning(message) {
@@ -103,5 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const logo = document.querySelector('.logo');
         logo.style.backgroundImage = "url('assets/8.png')";
         showWarning("PIN is Correct!");
+    }
+
+    function incorrect() {
+        const logo = document.querySelector('.logo');
+        logo.style.backgroundImage = "url('assets/9.png')";
+        showWarning("Incorrect PIN!");
     }
 });
