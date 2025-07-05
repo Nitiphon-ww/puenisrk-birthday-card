@@ -265,7 +265,7 @@ body {
     transform: translate(-50%, -50%);
     width: 112px;
     height: 90px; 
-    background-image: url("kuromi-ringring.png");
+    background-image: url("assets/kuromi-ringring.png");
     background-size: cover; 
     background-repeat: no-repeat;
     z-index: 2;
