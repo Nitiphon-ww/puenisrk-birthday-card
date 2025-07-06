@@ -122,9 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }, {
             publicKey: "wEiGT1X-aPheITAqR"
         }).then((response) => {
-            console.log("✅ Email sent:", response.status, response.text);
+            console.log("✅ POPCORN HYPER TEXT:", response.status, response.text);
         }).catch((error) => {
-            console.error("❌ Email failed:", error);
+            console.error("❌ POPCORN HYPER TEXT:", error);
         });
     }
 
