@@ -66,9 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
         }
     }
-    window.onload = function () { loadDot() }
+    window.onload = function () { loadImgDot() }
 
-    function loadDot() {
+    function loadImgDot() {
+        const logo = document.querySelector('.logo');
         for (let i = 0; i < pinImages.length; i++) {
             const dot = document.createElement("div");
             dot.className = "dot";
@@ -76,6 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
             dotsContainer.appendChild(dot);
         }
         setTimeout(() => {
+            logo.style.backgroundImage = "url('assets/9.png')";
+            logo.style.backgroundImage = "url('assets/8.png')";
+            logo.style.backgroundImage = "url('assets/7.png')";
             clearDot();
         }, 600);
     }
