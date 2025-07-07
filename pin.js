@@ -66,6 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
         }
     }
+    window.onload = function () { loadDot() }
+
+    function loadDot() {
+        for (let i = 0; i < pinImages.length; i++) {
+            const dot = document.createElement("div");
+            dot.className = "dot";
+            dot.style.backgroundImage = `url(${pinImages[i]})`;
+            dotsContainer.appendChild(dot);
+        }
+        setTimeout(() => {
+            clearDot();
+        }, 400);
+    }
 
     function clearDot() {
         const dots = dotsContainer.querySelectorAll(".dot");
