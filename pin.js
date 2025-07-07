@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         setTimeout(() => {
             clearDot();
-        }, 400);
+        }, 600);
     }
 
     function clearDot() {
